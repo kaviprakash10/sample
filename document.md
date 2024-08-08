@@ -1,1 +1,2 @@
 Git branch
+ A branch represents an independent line of development. Branches serve as an abstraction for the edit process. You can think of them as a way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project. This commend lets you to create, list, rename, and delete branches. It doesn't let swith between branches or put a history back together again.
