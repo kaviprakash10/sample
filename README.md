@@ -9,7 +9,7 @@ To delete a the branch, we use
 To rename the branch, use this command
  git branch -m<branch>
 
-Git checkout
+Git Checkout
  The git checkout command lets you navigate between the branches created by git branch. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on. The git checkout command may occasionally be confused with git clone. The differenthe two commands is that clone. The diference between the two commands is that clone works to fetch code from a remote repo, alternatively checkout works to switch between versions of code already on the local system.
 
 git checkout -b<new-branch>
@@ -17,7 +17,7 @@ git checkout -b<new-branch>
 To switch the  branch, you use 
  git checkout <branchname>
 
-Git merge
+Git Merge
   Git merge will combine multiple sequences of commits into one unified history. In the most frequences use cases, git merge is used to combine two branches. 
 To merge the branch, you use 
  git merge <branchname> 
