@@ -18,5 +18,5 @@ case $ch in
 4)Result = 'echo $a \ $b |bc'
 ;;
 esac
-echo "Result"
+echo "$Result"
 
