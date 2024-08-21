@@ -72,3 +72,7 @@ The Ours strategy operates on multiple N number of branches. The output merge re
 
     git merge -s subtree branchA branchB
 When merging A and B, if B is a child subtree of A, B is first updated to reflect the tree structure of A, This update is also done to the common ancestor tree that is shared between A and B.
+
+The Feature Branch Workflow
+
+ The Feature Branch Workflow assumes a central repository, and "main" represents the official project history. Instead of committing directly on their local "main" branch, developers create a new branch every time they start work on a new feature. In addition feature branches can be pushed to the central repository. This makes it possible to share a feature with other developers without touching any official code. 
