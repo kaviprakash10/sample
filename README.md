@@ -51,3 +51,10 @@ List all of the branches in your repository.
      git branch <testbranch>
 Create a new branch called ＜testbranch＞. 
 
+# Git checkout
+ The git checkout command used to navigate between the branches created by the " git branch " command.Checking out a branch updates the files in the working directory to match the version stored in that branch and it tells Git to record all new commits on that branch. Sometime we may confused with git clone. The difference between the two commands is that clone works of fetch code from a remote repo but the checkout command used to switch the version code on the local system.
+
+ ## Example
+    git checkout -b ＜testbranch＞
+    
+The above example simultaneously creates and checks out ＜testbranch＞. 
