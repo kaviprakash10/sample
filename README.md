@@ -1,38 +1,30 @@
 # Git Fetch
-The git fetch command downloads commits, files, and refs from a remote repository into your local repo. When downloading content from a remote repo, git pull and git fetch commands are available to accomplish the task, You can consider git fetch the safe version of these two commands. 
+This command that tells your local repo to retrieve the latest update.The git fetch command downloads commits, files, and refs from a remote repository into your local repo.  
 
 
 ### Git Fetch Commands 
 
-    git fetch <origin>
+    git fetch 
 
- Fetch all of the branches from the repository. This also downloads all of the required commits and files
- from the other repository.
+## Example
+admin@ -MacBook-Pro sample % git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 905 bytes | 82.00 KiB/s, done.
+From https://github.com/kaviprakash10/sample
+   fa02d97..cf2d192  main       -> origin/main
 
-     git fetch <origin> <main>
-Same as the above command, but only fetch the specified branch.
-
-    git fetch -all
-
-A power move which fetches all registered remotes and their branches.
+It will check any changes in the remote repo, if there is any changes it will show like the above example. If there is no changes it shows nothing.
 
 # Git Push
 Git push is most commonly used to publish an upload local changes to a central repository. After a local repository has been modified a push is executed to share the modifications with remote team members.
  
      git push <remote><branch>
 
-This command will push all of the necessary commits and internal objects. This creates a local branch in the destination repository. 
+## Example 
 
-    git push <remote> --force
-
-It is same as the above command but it forcefully  push that even if it results in a non-fast-forward merge. 
- 
- ## Example for push command
- 
-    git fetch origin main
-    git push origin main
-
-This should result in a fast-forward merge, and git push should not complain about any of the non-fast-forward issues discussed above.
 
 # Git Pull
  
