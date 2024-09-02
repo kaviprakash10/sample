@@ -2,8 +2,6 @@
 The git fetch command downloads commits, files, and refs from a remote repository into your local repo. When downloading content from a remote repo, git pull and git fetch commands are available to accomplish the task, You can consider git fetch the safe version of these two commands. 
 
 
-<image src="image/test.png">
-
 ### Git Fetch Commands 
 
     git fetch <origin>
