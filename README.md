@@ -65,6 +65,7 @@ Updating 5b1a3e1..31da220
 Fast-forward
  example.tf | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
+ 
 Fetch the specified remote’s copy of the current branch and immediately merge it into the local copy
 
 # Git Branch 
