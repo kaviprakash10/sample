@@ -25,7 +25,7 @@ command to see a file permission
 Ex:ls -l sample
 
 Now we change the file permission using chmod,
-
+![openFloer](./images/fpcheck.png)
 Now let check the permission,
 
 Next we change the Ownership of the file,
@@ -149,7 +149,7 @@ Syntax:
 
 ## Excuting while statement
 
-# 5.Testing process
+# 5.Testing process 
 
 ## Excuting command using GREP
 
