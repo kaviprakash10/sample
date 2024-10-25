@@ -1,29 +1,42 @@
+Table of contents
+=================
+
+* [1. File management](#1file-management)
+* [2.File and Processes](#2-file-and-process)
+* [3.Introduction to Shell Scripting](#3-introduction-to-shell-scripting)
+* [4.Conditional, Looping statements and Functions](#4-conditional-looping-statements-and-functions)
+* [5.Testing process](#5testing-process)
+
+
 # 1.File management
 Let's create file using vim editor
-   admin@sudhans-MacBook-Pro ~ % vim sample.txt
+command to create a file
+ vim file.txt
+ Ex: vim sample.txt
+
 The above command will open a empty txt file called sample, Then we can some text in the file. Now we want to save the file, then exit from the file.
 If you want to check the content of the file you use this commend.
-admin@sudhans-MacBook-Pro ~ % cat sample
-This is a testfile or a sample file.
-This is the content we add in the file.
+  cat sample
+
+This is a testfile or a sample file.That we created.
 Now we see about the file permissions using chmod,
- 
- admin@sudhans-MacBook-Pro ~ % ls -l sample
- -rw-r--r--   1 admin  staff    37 Sep 19 15:11 sample
+command to see a file permission
+  ls -l 
+Ex:ls -l sample
 
 Now we change the file permission using chmod,
- admin@sudhans-MacBook-Pro ~ % chmod 764 sample
+
 Now let check the permission,
- admin@sudhans-MacBook-Pro ~ % ls -l sample
- -rwxrw-r--  1 admin  staff  37 Sep 19 15:11 sample
-Next we change the Ownership of the file
-admin@sudhans-MacBook-Pro ~ % ls -l sample
- -rw-r--r--   1 admin  staff    37 Sep 19 15:11 sample
+
+Next we change the Ownership of the file,
+
+In the above file the ownership is in the admin,now we change the ownership to other. 
 now we change the ownership admin into root,
- admin@sudhans-MacBook-Pro ~ % sudo chown root sample
+command to change the ownership admin
+ sudo chown file
+Ex:sudo chown root sample.txt
 Let's check the ownership of the file,
- admin@sudhans-MacBook-Pro ~ % ls -l sample
- -rwxrw-r--  1 root  staff  37 Sep 19 15:11 sample
+
 Here, you can see the ownership of the file changed admin inot root.
 
 # 2. File and Process
@@ -31,92 +44,118 @@ Here, you can see the ownership of the file changed admin inot root.
 The `ps` Command to List Running Processes in Linux. 'ps' stands for process status.
 Syntax of ps command ps [option]
 ## 1) Simple process selection : Shows the processes for the current shell 
-ps
- admin@sudhans-MacBook-Pro ~ % ps
-  PID TTY           TIME CMD
- 2118 ttys000    0:00.06 -zsh
- 2259 ttys002    0:00.04 /bin/zsh -il
+command to see the current shel:
+  ps
+ 
 ## 2) View All Running Processes in Linux.
-ps -A
- admin@sudhans-MacBook-Pro ~ % ps -A
-  PID TTY           TIME CMD
-    1 ??         0:34.64 /sbin/launchd
-   82 ??         0:25.58 /usr/libexec/logd
-   83 ??         0:00.04 /usr/libexec/smd
-   84 ??         0:07.72 /usr/libexec/UserEventAgent (System)
-   87 ??         0:00.77 /System/Library/PrivateFrameworks/Uninstall.framework/
-   88 ??         0:19.26 /System/Library/Frameworks/CoreServices.framework/Vers
-   89 ??         0:01.47 /System/Library/PrivateFrameworks/MediaRemote.framewor
-   92 ??         0:04.43 /usr/sbin/systemstats --daemon
-   94 ??         0:07.41 /usr/libexec/configd
-   95 ??         0:00.01 endpointsecurityd
-   96 ??         0:12.07 /System/Library/CoreServices/powerd.bundle/powerd
-## 3) List Processes Not associated with a Terminal in Linux
-ps -a 
- admin@sudhans-MacBook-Pro ~ % ps -a
-  PID TTY           TIME CMD
- 2117 ttys000    0:00.02 login -pf admin
- 2118 ttys000    0:00.07 -zsh
- 2357 ttys000    0:00.01 ps -a
- 2259 ttys002    0:00.04 /bin/zsh -il
-## 4) List All Processes Associated with this Terminal in Linux
-ps -T
- admin@sudhans-MacBook-Pro ~ % ps -T
-  PID TTY           TIME CMD
- 2117 ttys000    0:00.02 login -pf admin
- 2118 ttys000    0:00.07 -zsh
- 2361 ttys000    0:00.01 ps -T
-
-## kill command
+command to see all running process
+ ps -A
+ ## kill command
 kill command in Linux is a built-in command which is used to terminate processes manually.
 Basic Syntax of kill command in Linux:
 kill [signal] PID
 Here, we can use the signal as number or a tearm.
- admin@sudhans-MacBook-Pro ~ % ps
-  PID TTY           TIME CMD
- 2407 ttys000    0:00.04 -zsh
- 2259 ttys002    0:00.04 /bin/zsh -il
+
 Now we kill the signal using number 9 or SIGKILL, It denotes kill the signal
- admin@sudhans-MacBook-Pro ~ % kill -9 2259
- admin@sudhans-MacBook-Pro ~ % ps
-  PID TTY           TIME CMD
- 2407 ttys000    0:00.04 -zsh
+command to kill the signal 
+  kill -9 or SIGKILL PID
+
 Here you can see the signal was killed.
 # 3. Introduction to Shell Scripting.
 ## simple program in shell script
-Creating lool
-    #!/bin/bash
- echo "The number "
- for ((i=1; i<=10; i++))
- do
- echo "$i" 
- done
+Here we created a looping progrom in sheel script.
+
+  #!/bin/bash
+  echo "The number "
+  for ((i=1; i<=10; i++))
+  do
+  echo "$i" 
+  done
 Output
-1 2 3 4 5 6 7 8 9 10
+
 ## Local variable
-Creating a local variable
+First we create a local variable,
  #!/bin/bash
- function test()  
- {
-  local x="passed"
- echo "The test is $x"
- }
- test 
- echo"The test is $x"
+ function first () {
+   local x="Hi Guys"
+   echo "Inside first function x=$x"
+   }
+   first
+   echo "Outside first function x = $x"
 Output:
-The test is passed
-The test is 
+
 ## Global variable
 Crating a Global variable
   #!/bin/bash
- function test()  
- {
- x="passed"
- echo "The test is $x"
- }
- test 
- echo"The test is $x"
+  function first () {
+   x="Hello guys"
+   echo "Inside first function x= $x"
+   }
+   first
+   echo "Outside first function x = $x"
 Output:
-The test is passed
-The test is passed
+
 # 4. Conditional, Looping statements and Functions
+There are total 5 conditional statements which can be used in bash programming, 
+
+*[1.if statement](#1if-statement)
+*[2.if-else statement](#2if-else-statement)
+*[3.if..elif..else..fi statement](#3ifelifelsefi-statement)
+*[4.switch statement](#4switch-case)
+## 1.if statement
+This will process if specified conditiom is true
+Syntax:
+ if [expression]
+ then
+ statement
+ fi
+## 2.if-else statement
+If specified condirion is not true in if part then else part will be work.
+Syntax:
+if [expression]
+then 
+statement1
+else 
+statement2
+fi
+## 3.if.elif.else.fi statement
+To use multiple conditions in one if-else,then elif keyword is use in shell.if condition1 is true it executes statement1 and statement2.Otherwise it check the else part.
+Syntax:
+ if [expression1]
+ then
+ statement1
+ statement2
+ elif[expression2]
+ then 
+ statement3
+ statement4
+ else
+ statement5
+ fi
+## 4.switch case
+Case statement is used to do a particular task.If specified value, match with the pattern then it will execute a block of that particular pattern.
+Syntax:
+ case in 
+ case1 statement 1;;
+ case2 statement 2;;
+ esac
+## Excuting if statement
+
+## Excuting if-else
+
+## Excuting for statement
+
+## Excuting util statement 
+
+## Excuting while statement
+
+# 5.Testing process
+
+## Excuting command using GREP
+
+* In the above exapmle -i option is used to to print all the matching case whether it may be in caps or not it will print.
+* -h Display the matched line, but do not display the other line.
+* -c Print only a count of line that match a pattern.
+* -n Display the matched lines and their line number.
+
+## Executing command SED
