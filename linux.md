@@ -24,6 +24,7 @@ command to see a file permission
   ls -l 
 Ex:ls -l sample
 
+![image alt](/Users/admin/Desktop/image)
 Now we change the file permission using chmod,
 ![image alt](https://github.com/kaviprakash10/sample/blob/8bd6cba1dc1ff19c91cdf41beff2a8118e12e9b3/fp%20check.png)
 Now let check the permission,
