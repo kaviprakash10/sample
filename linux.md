@@ -25,7 +25,7 @@ command to see a file permission
 Ex:ls -l sample
 
 Now we change the file permission using chmod,
-![image alt](image_https://github.com/kaviprakash10/sample/blob/8bd6cba1dc1ff19c91cdf41beff2a8118e12e9b3/fp%20check.png)
+![image alt](https://github.com/kaviprakash10/sample/blob/8bd6cba1dc1ff19c91cdf41beff2a8118e12e9b3/fp%20check.png)
 Now let check the permission,
 
 Next we change the Ownership of the file,
