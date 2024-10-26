@@ -6,6 +6,7 @@ Table of contents
 * [3.Introduction to Shell Scripting](#3-introduction-to-shell-scripting)
 * [4.Conditional, Looping statements and Functions](#4-conditional-looping-statements-and-functions)
 * [5.Testing process](#5testing-process)
+* [6. Scheduling Tasks](#6-scheduling-tasks)
 
 
 # 1.File management
@@ -13,7 +14,7 @@ Let's create file using vim editor
 command to create a file
  vim file.txt
  Ex: vim sample.txt
-
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/sample.png)
 The above command will open a empty txt file called sample, Then we can some text in the file. Now we want to save the file, then exit from the file.
 If you want to check the content of the file you use this commend.
   cat sample
@@ -24,12 +25,15 @@ command to see a file permission
   ls -l 
 Ex:ls -l sample
 
-![image alt](/Users/admin/Desktop/image)
-Now we change the file permission using chmod,
-![image alt](https://github.com/kaviprakash10/sample/blob/8bd6cba1dc1ff19c91cdf41beff2a8118e12e9b3/fp%20check.png)
-Now let check the permission,
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/fp%20check.png)
 
-Next we change the Ownership of the file,
+Now we change the file permission using chmod,
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/fp%20change.png)
+
+Now let check the permission,
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/fp%20check.png)
+
 
 In the above file the ownership is in the admin,now we change the ownership to other. 
 now we change the ownership admin into root,
@@ -37,7 +41,7 @@ command to change the ownership admin
  sudo chown file
 Ex:sudo chown root sample.txt
 Let's check the ownership of the file,
-
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/fo%20change.png)
 Here, you can see the ownership of the file changed admin inot root.
 
 # 2. File and Process
@@ -47,19 +51,28 @@ Syntax of ps command ps [option]
 ## 1) Simple process selection : Shows the processes for the current shell 
 command to see the current shel:
   ps
- 
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/ps.png)
+
 ## 2) View All Running Processes in Linux.
 command to see all running process
+
  ps -A
- ## kill command
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/ps%20_A.png)
+## kill command
 kill command in Linux is a built-in command which is used to terminate processes manually.
 Basic Syntax of kill command in Linux:
 kill [signal] PID
 Here, we can use the signal as number or a tearm.
 
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/ps.png)
+
 Now we kill the signal using number 9 or SIGKILL, It denotes kill the signal
 command to kill the signal 
   kill -9 or SIGKILL PID
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/signal%20kill.png)
 
 Here you can see the signal was killed.
 # 3. Introduction to Shell Scripting.
@@ -85,6 +98,8 @@ First we create a local variable,
    echo "Outside first function x = $x"
 Output:
 
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/local%20var.png)
+
 ## Global variable
 Crating a Global variable
   #!/bin/bash
@@ -95,6 +110,7 @@ Crating a Global variable
    first
    echo "Outside first function x = $x"
 Output:
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/global%20var.png)
 
 # 4. Conditional, Looping statements and Functions
 There are total 5 conditional statements which can be used in bash programming, 
@@ -141,22 +157,37 @@ Syntax:
  case2 statement 2;;
  esac
 ## Excuting if statement
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/if%20sta.png)
 
 ## Excuting if-else
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/if-else.png)
 
 ## Excuting for statement
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/for.png)
 
 ## Excuting util statement 
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/util.png)
 
 ## Excuting while statement
-
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/while.png)
 # 5.Testing process 
 
 ## Excuting command using GREP
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/GREP.png)
 
 * In the above exapmle -i option is used to to print all the matching case whether it may be in caps or not it will print.
 * -h Display the matched line, but do not display the other line.
 * -c Print only a count of line that match a pattern.
 * -n Display the matched lines and their line number.
 
-## Executing command SED
+## Executing command AWK
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/1.awk.png)
+
+* In the above exaple this "print" command will print all the things that contain in the file.
+
+![image alt](https://github.com/kaviprakash10/sample/blob/1ddf843e26ad2d17a311d64212b696966d30062b/image/awk2.png)
+
+* In the above exaple we printed specific parts using the awk command.
+
+# 6. Scheduling Tasks
